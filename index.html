@@ -11,7 +11,11 @@
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-
+    <style>
+          .filter-table .quick { margin-left: 0.5em; font-size: 0.8em; text-decoration: none; }
+          .fitler-table .quick:hover { text-decoration: underline; }
+          td.alt { background-color: #ffc; background-color: rgba(255, 255, 0, 0.2); }
+          </style>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -76,9 +80,9 @@
       <div class="panel panel-default">
         <div class="panel-heading">By Component</div>
         <div class="panel-body">
-          <input type="text" class="form-control" placeholder="Filter">
+
         </div>
-        <table id="stats-table" class="table tablesorter">
+        <table id="stats-table" class="table tablesorter sieve">
           <thead>
             <tr>
               <th>Component</th>
@@ -109,6 +113,15 @@
     <script src="js/plugins.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/jquery.tablesorter.min.js"></script>
+    <script src="js/vendor/jquery.filtertable.min.js"></script>
+    <script>
+       $(document).ready(function() {
+         $("table.sieve").sieve();
+         $( "input" ).addClass( "form-control" );
+         $( "input" ).attr( "placeholder", "Search here" );
+       });
+      </script>
+
   </body>
 </html>
 
